@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Parcels
+namespace Shipment
 {
   public class Program
   {
