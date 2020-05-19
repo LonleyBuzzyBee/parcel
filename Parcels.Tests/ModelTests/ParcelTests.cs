@@ -6,8 +6,14 @@ using System;
 namespace Shipment.Test 
 {
   [TestClass]
-  public class ParcelTests
+  public class ParcelTests : IDisposable
   {
+
+  public void Dispose()
+  {
+    Parcel.ClearAll();
+  }
+  
     [TestMethod]
     public void ParcelConstructor_CreatesParcelInstance_Parcel()
     {
@@ -31,5 +37,16 @@ namespace Shipment.Test
 
       Assert.AreEqual(14.4, cost);
     }
+    [TestMethod]
+
+    public void GetAll_ReturnsList()
+    {
+      Parcel newParcel = new Parcel(12, 12, 10, 10);
+      List<Parcel> newList = new List<Parcel>{ newParcel };
+      List<Parcel> result = Parcel.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
+  
