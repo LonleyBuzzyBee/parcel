@@ -15,13 +15,13 @@ namespace Shipment.Models
       Height = height;
       Weight = weight;
     }
-    public double Volume()
+    public double GetVolume()
     {
       return Length * Width * Height;
     }
-    public double CostToShip()
+    public double GetCostToShip()
     {
-      double cost = Length * Width * Height * Weight / 100;
+      double cost = Length * Width * Height * Weight / 1000;
       return cost;
     }
 

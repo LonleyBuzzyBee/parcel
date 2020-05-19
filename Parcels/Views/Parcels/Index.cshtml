@@ -1,0 +1,7 @@
+@using Shipment.Models;
+
+<h1>Shipping Cost</h1>
+<p>Package volume: @Model.GetVolume()</p>
+<p>Package cost: @Model.GetCostToShip()</p>
+
+<a href="/parcel/new">Calculate another shipment</a>
