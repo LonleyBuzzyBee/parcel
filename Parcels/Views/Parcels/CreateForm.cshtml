@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
     <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
     <title>To Do List</title>
   </head>
   <body>
-    <form action="/parcel" method="post">
-      <label for="length">Add package length:</label>
-      <input type="double" name="length" id="length">
-      <label for="width">Add package width:</label>
-      <input type="double" name="width" id="width">
-      <label for="height">Add package height:</label>
-      <input id="height" name="height" type="double">
-      <label for="weight">Add package weight:</label>
-      <input id="weight" name="weight" type="double">
-      <button type="submit">Calculate shipping cost!</button>
-    </form>
+    <div class="container">
+      <form action="/parcel" method="post">
+        <label for="length">Add package length:</label>
+        <input type="double" name="length" id="length">
+        <br>
+        <label for="width">Add package width:</label>
+        <input type="double" name="width" id="width">
+        <br>
+        <label for="height">Add package height:</label>
+        <input id="height" name="height" type="double">
+        <br>
+        <label for="weight">Add package weight:</label>
+        <input id="weight" name="weight" type="double">
+        <br>
+        <button type="submit" class="btn btn-info">Calculate shipping cost!</button>
+      </form>
+    </div>
   </body> 
 </html>

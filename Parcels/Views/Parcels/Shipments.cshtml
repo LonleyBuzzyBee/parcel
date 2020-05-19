@@ -1,1 +1,28 @@
 @using Shipment.Models;
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+    <title>Shipments</title>
+  </head>
+  <body>
+    <div>
+      @if(Model.Count == 0)
+      {
+      <h1>There are no packages</h1>
+
+      }
+      @* <h1>Here are all your packages; @Model._instances</h1> *@
+        <ul>
+          @foreach(Parcel parcel in Model)
+          {
+            <li>Weight: @parcel.Weight, Length: @parcel.Length, Height: @parcel.Height, Width: @parcel.Width, Volume: @parcel.Volume, Cost: @parcel.Cost</li>
+          }
+
+        </ul>
+    </div>
+    <a href="/parcel/new">Add a new package.</a>
+    <a href="/">Home</a>
+  </body> 
+</html>

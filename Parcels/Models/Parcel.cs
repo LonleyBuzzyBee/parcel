@@ -9,6 +9,9 @@ namespace Shipment.Models
     public double Height { get; set; }
     public double Weight { get; set; }
 
+    public double Volume { get; set; }
+    public double Cost { get; set; }
+
     private static List<Parcel> _instances = new List<Parcel> {};
     public Parcel(double length, double width, double height, double weight)
     {
@@ -20,18 +23,24 @@ namespace Shipment.Models
     }
     public double GetVolume()
     {
-      return Length * Width * Height;
+      Volume = Length * Width * Height;
+      return Volume;
     }
     public double GetCostToShip()
     {
-      double cost = Length * Width * Height * Weight / 1000;
-      return cost;
+      Cost = Length * Width * Height * Weight / 1000;
+      return Cost;
     }
     public static List<Parcel> GetAll()
     {
       
       return _instances;
     }
+    // public static List<Parcel> GetAll()
+    // {
+      
+    //   return _instances;
+    // }
     public static void ClearAll()
     {
       _instances.Clear();
